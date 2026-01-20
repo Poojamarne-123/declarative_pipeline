@@ -1,0 +1,8 @@
+resource "aws_instance" "amazon_linux" {
+  subnet_id = data.aws_subnet.myexistingsubnet.subnet_id
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = "t2.micro"
+  tags = {
+    Name = "AmazonLinuxEC2"
+  }
+}
