@@ -33,6 +33,13 @@ resource "aws_route_table" "MRT" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
+resource "aws_route_table" "MRT" {
+  vpc_id = aws_vpc.MyVpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
 
 }
 resource "aws_eip" "nat_eip" {
